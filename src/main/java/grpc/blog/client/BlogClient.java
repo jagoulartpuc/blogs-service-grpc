@@ -1,67 +1,84 @@
 package grpc.blog.client;
 
-import com.proto.blog.Blog;
-import com.proto.blog.CreateBlogRequest;
-import com.proto.blog.CreateBlogResponse;
-import com.proto.blog.DeleteBlogRequest;
-import com.proto.blog.DeleteBlogResponse;
-import com.proto.blog.FindAllBlogRequest;
-import com.proto.blog.ReadBlogRequest;
-import com.proto.blog.ReadBlogResponse;
+import com.proto.blog.*;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+
+import java.util.Random;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import static com.proto.blog.BlogServiceGrpc.*;
 
 public class BlogClient {
 
+    private static int period = 5;
+
     public static void main(String[] args) {
-        startClient().run();
-        startClient().run();
-        startClient().run();
+        ScheduledExecutorService executor = Executors.newScheduledThreadPool(5);
+        executor.scheduleAtFixedRate(startClient(), 2, period - 1, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(startClient(), 1, period - 3, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(startClient(), 0, period, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(startClient(), 4, period - 4, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(startClient(), 3, period, TimeUnit.SECONDS);
     }
 
     public static Runnable startClient() {
         return () -> {
-            System.out.println("Client starting at thread: " + Thread.currentThread().getId());
-
-            ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090).usePlaintext().build();
-
+            System.out.println("Starting client at thread: " + Thread.currentThread().getId());
+            Random random = new Random();
+            ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9091).usePlaintext().build();
             BlogServiceBlockingStub blogClient = newBlockingStub(channel);
+            System.out.println("Period: " + period);
+            period = random.nextInt(5) + 1;
 
-            CreateBlogResponse response = blogClient.createBlog(CreateBlogRequest.newBuilder()
-                    .setBlog(Blog.newBuilder()
-                            .setAuthorId("Jose e Andre")
-                            .setTitle("Trabalho de programacao distribuida")
-                            .setContent("Implementacao de grpc com banco de dados compartilhado")
-                            .build())
-                    .build());
-
-            System.out.println("Received create Blog response");
-            System.out.println(response.toString());
-
-            System.out.println("Reading blog...");
-            String blogId = response.getBlog().getId();
-
-            ReadBlogResponse blogResponse = blogClient.readBlog(ReadBlogRequest.newBuilder().setBlogId(blogId).build());
-            System.out.println("Received Blog response");
-            System.out.println(blogResponse.toString());
-
-            System.out.println("Deleting blog...");
-            DeleteBlogResponse deleteBlogResponse = blogClient.deleteBlog(DeleteBlogRequest.newBuilder()
-                    .setBlogId(response.getBlog().getId())
-                    .build());
-
-            System.out.println("Deleted blog!");
-            System.out.println(deleteBlogResponse.toString());
-
-            System.out.println("Finding All blogs...");
-
-            blogClient.findAllBlog(FindAllBlogRequest.newBuilder().build())
-                    .forEachRemaining(blog -> System.out.println(blog.toString()));
-
-            System.out.println("Shutting down channel");
-            channel.shutdown();
+            String[] operations = {"INSERT", "READ", "DELETE"};
+            String randomOperation = operations[random.nextInt(3)];
+            if (randomOperation.equals("INSERT")) {
+                insertBlogRequest(blogClient);
+            } else if (randomOperation.equals("READ")) {
+                readAllBlogsRequest(blogClient);
+            } else {
+                deleteBlogRequest(blogClient);
+            }
         };
     }
+
+    public static void readAllBlogsRequest(BlogServiceBlockingStub blogClient) {
+        System.out.println("Reading All blogs...");
+        blogClient.findAllBlog(FindAllBlogRequest.newBuilder().build())
+                .forEachRemaining(blog -> System.out.println(blog.toString()));
+    }
+
+    public static void insertBlogRequest(BlogServiceBlockingStub blogClient) {
+        CreateBlogResponse response = blogClient.createBlog(CreateBlogRequest.newBuilder()
+                .setBlog(Blog.newBuilder()
+                        .setAuthorId("Jose e Andre")
+                        .setTitle("Trabalho de programacao distribuida")
+                        .setContent("Implementacao de grpc com banco de dados compartilhado")
+                        .build())
+                .build());
+
+        System.out.println("Inserting new blog...");
+        System.out.println(response.toString());
+    }
+
+    public static void deleteBlogRequest(BlogServiceBlockingStub blogClient) {
+        System.out.println("Deleting blog...");
+        DeleteBlogResponse deleteBlogResponse = blogClient.deleteBlog(DeleteBlogRequest.newBuilder()
+                .setBlogId(getNextBlogId(blogClient))
+                .build());
+        System.out.println(deleteBlogResponse.toString());
+    }
+
+    private static String getNextBlogId(BlogServiceBlockingStub blogClient) {
+        return blogClient.findAllBlog(
+                        FindAllBlogRequest.newBuilder().build()
+                )
+                .next()
+                .getBlog()
+                .getId();
+    }
+
 }

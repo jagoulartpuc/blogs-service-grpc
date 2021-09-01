@@ -12,7 +12,7 @@ public class BlogServer {
     public static void main(String[] args) throws IOException, InterruptedException {
         System.out.println("Server started");
 
-        Server server = ServerBuilder.forPort(9090)
+        Server server = ServerBuilder.forPort(9091)
                 .addService(new BlogServiceImpl())
                 .addService(ProtoReflectionService.newInstance())
                 .build();

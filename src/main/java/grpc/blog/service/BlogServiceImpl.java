@@ -36,7 +36,6 @@ public class BlogServiceImpl extends BlogServiceImplBase {
                 .append("title", blog.getTitle())
                 .append("content", blog.getContent());
 
-        System.out.println("Inserting a new Blog...");
         collection.insertOne(document);
 
         String id = document.get("_id").toString();
@@ -54,47 +53,8 @@ public class BlogServiceImpl extends BlogServiceImplBase {
     }
 
     @Override
-    public void readBlog(ReadBlogRequest request, StreamObserver<ReadBlogResponse> responseObserver) {
-        System.out.println("Received Read Blog Request");
-
-        System.out.println("Searching for a Blog...");
-        Document result = null;
-        try {
-            result = collection.find(eq("_id", new ObjectId(request.getBlogId()))).first();
-        } catch (Exception ex) {
-            System.out.println("Blog id: " + request.getBlogId() + " not found.");
-
-            responseObserver.onError(
-                    Status.NOT_FOUND
-                            .withDescription("The blog with the corresponding id was not found.")
-                            .augmentDescription(ex.getLocalizedMessage())
-                            .asRuntimeException()
-            );
-        }
-
-        if (result == null) {
-            System.out.println("Blog id: " + request.getBlogId() + " not found.");
-
-            responseObserver.onError(
-                    Status.NOT_FOUND
-                            .withDescription("The blog with the corresponding id was not found.")
-                            .augmentDescription("Blog id: " + request.getBlogId() + " not found.")
-                            .asRuntimeException()
-            );
-        }
-
-        System.out.println("Blog found, sending response...");
-
-        responseObserver.onNext(ReadBlogResponse.newBuilder()
-                .setBlog(documentToBlog(result))
-                .build());
-        responseObserver.onCompleted();
-    }
-
-    @Override
     public void deleteBlog(DeleteBlogRequest request, StreamObserver<DeleteBlogResponse> responseObserver) {
         System.out.println("Received Delete Blog Request");
-        System.out.println("Searching for a Blog to delete...");
         DeleteResult result = null;
 
         try {
@@ -111,6 +71,7 @@ public class BlogServiceImpl extends BlogServiceImplBase {
             );
         }
 
+        assert result != null;
         if (result.getDeletedCount() == 0) {
             System.out.println("Blog id: " + request.getBlogId() + " not found.");
 
