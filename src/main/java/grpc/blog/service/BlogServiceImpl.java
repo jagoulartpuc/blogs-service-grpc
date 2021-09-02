@@ -27,13 +27,13 @@ public class BlogServiceImpl extends BlogServiceImplBase {
     private final MongoCollection<Document> collection = mongoClient.getDatabase("blog-db").getCollection("blogs");
     private static final Semaphore insertionSemaphore = new Semaphore(0);
     private static final Semaphore deletionSemaphore = new Semaphore(0);
+    private volatile boolean isDeletionProcessing;
 
     @Override
     public void createBlog(CreateBlogRequest request, StreamObserver<CreateBlogResponse> responseObserver) {
-        if (deletionSemaphore.tryAcquire()) {
+        if (isDeletionProcessing) {
             System.out.println("Waiting deletion to be done...");
         } else {
-            System.out.println("=======================================");
             System.out.println("Received Create Blog Request");
             Blog blog = request.getBlog();
 
@@ -61,22 +61,18 @@ public class BlogServiceImpl extends BlogServiceImplBase {
 
             responseObserver.onNext(response);
             responseObserver.onCompleted();
-            System.out.println("=======================================");
 
-            // Signal deletion
-            deletionSemaphore.release();
         }
 
     }
 
     @Override
     public void deleteBlog(DeleteBlogRequest request, StreamObserver<DeleteBlogResponse> responseObserver) {
-        System.out.println("=======================================");
         System.out.println("Received Delete Blog Request");
         DeleteResult result = null;
 
         // Wait
-        deletionSemaphore.tryAcquire();
+        isDeletionProcessing = deletionSemaphore.tryAcquire();
         try {
             //Critical Session
             result = collection.deleteOne(eq("_id", new ObjectId(request.getBlogId())));
@@ -105,22 +101,24 @@ public class BlogServiceImpl extends BlogServiceImplBase {
         }
 
         System.out.println("Deleted! Sending as response");
-
+        // Signal deletion
+        deletionSemaphore.release();
+        isDeletionProcessing = false;
         responseObserver.onNext(DeleteBlogResponse.newBuilder().build());
         responseObserver.onCompleted();
-        System.out.println("=======================================");
 
     }
 
     @Override
     public void findAllBlog(FindAllBlogRequest request, StreamObserver<FindAllBlogResponse> responseObserver) {
-        System.out.println("=======================================");
-        System.out.println("Received Find All Blog Request");
+        if (isDeletionProcessing) {
+            System.out.println("Waiting deletion to be done...");
+        } else {
+            System.out.println("Received Find All Blog Request");
 
-        collection.find().forEach(document -> responseObserver.onNext(FindAllBlogResponse.newBuilder().setBlog(documentToBlog(document)).build()));
-
-        responseObserver.onCompleted();
-        System.out.println("=======================================");
+            collection.find().forEach(document -> responseObserver.onNext(FindAllBlogResponse.newBuilder().setBlog(documentToBlog(document)).build()));
+            responseObserver.onCompleted();
+        }
     }
 
     private Blog documentToBlog(Document document) {
