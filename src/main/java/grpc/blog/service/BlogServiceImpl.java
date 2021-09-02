@@ -25,50 +25,58 @@ public class BlogServiceImpl extends BlogServiceImplBase {
 
     private final MongoClient mongoClient = MongoClients.create("mongodb+srv://admin:admin@cluster0.mmz1f.mongodb.net/blog-db?retryWrites=true&w=majority");
     private final MongoCollection<Document> collection = mongoClient.getDatabase("blog-db").getCollection("blogs");
-    private static final Semaphore isertionSemaphore = new Semaphore(0);
+    private static final Semaphore insertionSemaphore = new Semaphore(0);
     private static final Semaphore deletionSemaphore = new Semaphore(0);
 
     @Override
-    public void createBlog(CreateBlogRequest request, StreamObserver<CreateBlogResponse> responseObserver) throws InterruptedException {
-        System.out.println("=======================================");
-        System.out.println("Received Create Blog Request");
-        Blog blog = request.getBlog();
+    public void createBlog(CreateBlogRequest request, StreamObserver<CreateBlogResponse> responseObserver) {
+        if (deletionSemaphore.tryAcquire()) {
+            System.out.println("Waiting deletion to be done...");
+        } else {
+            System.out.println("=======================================");
+            System.out.println("Received Create Blog Request");
+            Blog blog = request.getBlog();
 
-        Document document = new Document().append("authorId", blog.getAuthorId())
-                .append("title", blog.getTitle())
-                .append("content", blog.getContent());
+            Document document = new Document().append("authorId", blog.getAuthorId())
+                    .append("title", blog.getTitle())
+                    .append("content", blog.getContent());
 
-        //Wait
-        isertionSemaphore.acquire();
+            //Wait
+            insertionSemaphore.tryAcquire();
 
-        // Critical session
-        collection.insertOne(document);
+            // Critical session
+            collection.insertOne(document);
 
-        //Signal
-        isertionSemaphore.release();
+            //Signal
+            insertionSemaphore.release();
 
-        String id = document.get("_id").toString();
-        System.out.println("Inserted Blog id: " + id);
+            String id = document.get("_id").toString();
+            System.out.println("Inserted Blog id: " + id);
 
-        CreateBlogResponse response = CreateBlogResponse.newBuilder()
-                .setBlog(blog.toBuilder()
-                        .setId(id)
-                        .build())
-                .build();
+            CreateBlogResponse response = CreateBlogResponse.newBuilder()
+                    .setBlog(blog.toBuilder()
+                            .setId(id)
+                            .build())
+                    .build();
 
-        responseObserver.onNext(response);
-        responseObserver.onCompleted();
-        System.out.println("=======================================");
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+            System.out.println("=======================================");
+
+            // Signal deletion
+            deletionSemaphore.release();
+        }
 
     }
 
     @Override
-    public void deleteBlog(DeleteBlogRequest request, StreamObserver<DeleteBlogResponse> responseObserver) throws InterruptedException {
+    public void deleteBlog(DeleteBlogRequest request, StreamObserver<DeleteBlogResponse> responseObserver) {
         System.out.println("=======================================");
         System.out.println("Received Delete Blog Request");
         DeleteResult result = null;
 
-        deletionSemaphore.acquire();
+        // Wait
+        deletionSemaphore.tryAcquire();
         try {
             //Critical Session
             result = collection.deleteOne(eq("_id", new ObjectId(request.getBlogId())));

@@ -28,9 +28,10 @@ public class BlogClient {
         return () -> {
             System.out.println("Starting client at thread: " + Thread.currentThread().getId());
             Random random = new Random();
-            ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9091).usePlaintext().build();
+            int[] ports = {9090, 9091, 9092};
+            int port = ports[random.nextInt(3)];
+            ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", port).usePlaintext().build();
             BlogServiceBlockingStub blogClient = newBlockingStub(channel);
-            System.out.println("Period: " + period);
             period = random.nextInt(5) + 1;
 
             String[] operations = {"INSERT", "READ", "DELETE"};
