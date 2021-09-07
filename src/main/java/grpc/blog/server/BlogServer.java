@@ -6,24 +6,32 @@ import io.grpc.ServerBuilder;
 import io.grpc.protobuf.services.ProtoReflectionService;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static java.util.Arrays.asList;
 
 public class BlogServer {
 
     public static void main(String[] args) {
-        startServerAtPort(9090).run();
-        startServerAtPort(9091).run();
-        startServerAtPort(9092).run();
+        List<Runnable> servers = asList(
+                startServerAtPort(9090),
+                startServerAtPort(9091),
+                startServerAtPort(9092)
+        );
 
+        servers.parallelStream().forEach(Runnable::run);
     }
 
     public static Runnable startServerAtPort(int port) {
         return () -> {
-            System.out.println("Server started");
 
-            Server server = ServerBuilder.forPort(9091)
+            Server server = ServerBuilder.forPort(port)
                     .addService(new BlogServiceImpl())
                     .addService(ProtoReflectionService.newInstance())
                     .build();
+
+            System.out.println("Server started at port: " + port);
 
             try {
                 server.start();

@@ -25,13 +25,13 @@ public class BlogServiceImpl extends BlogServiceImplBase {
 
     private final MongoClient mongoClient = MongoClients.create("mongodb+srv://admin:admin@cluster0.mmz1f.mongodb.net/blog-db?retryWrites=true&w=majority");
     private final MongoCollection<Document> collection = mongoClient.getDatabase("blog-db").getCollection("blogs");
-    private static final Semaphore insertionSemaphore = new Semaphore(0);
     private static final Semaphore deletionSemaphore = new Semaphore(0);
-    private volatile boolean isDeletionProcessing;
 
     @Override
-    public void createBlog(CreateBlogRequest request, StreamObserver<CreateBlogResponse> responseObserver) {
-        if (isDeletionProcessing) {
+    public synchronized void createBlog(CreateBlogRequest request, StreamObserver<CreateBlogResponse> responseObserver) {
+        int permits = deletionSemaphore.availablePermits();
+        System.out.println(permits);
+        if (permits == 1) {
             System.out.println("Waiting deletion to be done...");
         } else {
             System.out.println("Received Create Blog Request");
@@ -41,14 +41,8 @@ public class BlogServiceImpl extends BlogServiceImplBase {
                     .append("title", blog.getTitle())
                     .append("content", blog.getContent());
 
-            //Wait
-            insertionSemaphore.tryAcquire();
-
             // Critical session
             collection.insertOne(document);
-
-            //Signal
-            insertionSemaphore.release();
 
             String id = document.get("_id").toString();
             System.out.println("Inserted Blog id: " + id);
@@ -71,8 +65,8 @@ public class BlogServiceImpl extends BlogServiceImplBase {
         System.out.println("Received Delete Blog Request");
         DeleteResult result = null;
 
-        // Wait
-        isDeletionProcessing = deletionSemaphore.tryAcquire();
+
+
         try {
             //Critical Session
             result = collection.deleteOne(eq("_id", new ObjectId(request.getBlogId())));
@@ -86,6 +80,13 @@ public class BlogServiceImpl extends BlogServiceImplBase {
                             .augmentDescription(ex.getLocalizedMessage())
                             .asRuntimeException()
             );
+        }
+
+        // Wait
+        try {
+            deletionSemaphore.acquire();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
         assert result != null;
@@ -103,7 +104,6 @@ public class BlogServiceImpl extends BlogServiceImplBase {
         System.out.println("Deleted! Sending as response");
         // Signal deletion
         deletionSemaphore.release();
-        isDeletionProcessing = false;
         responseObserver.onNext(DeleteBlogResponse.newBuilder().build());
         responseObserver.onCompleted();
 
@@ -111,7 +111,9 @@ public class BlogServiceImpl extends BlogServiceImplBase {
 
     @Override
     public void findAllBlog(FindAllBlogRequest request, StreamObserver<FindAllBlogResponse> responseObserver) {
-        if (isDeletionProcessing) {
+        int permits = deletionSemaphore.availablePermits();
+        System.out.println(permits);
+        if (permits == 1) {
             System.out.println("Waiting deletion to be done...");
         } else {
             System.out.println("Received Find All Blog Request");
