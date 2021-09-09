@@ -26,8 +26,10 @@ proto/main/java/com/proto/blog/ReadBlogResponse.java
  com.proto.blog.ReadBlogResponse
  com.proto.blog.ReadBlogResponse$1
  com.proto.blog.ReadBlogResponse$Builder
-grpc/blog/client/BlogClient.java
- grpc.blog.client.BlogClient
+proto/main/java/com/proto/blog/CreateBlogRequest.java
+ com.proto.blog.CreateBlogRequest
+ com.proto.blog.CreateBlogRequest$1
+ com.proto.blog.CreateBlogRequest$Builder
 proto/main/java/com/proto/blog/ReadBlogRequest.java
  com.proto.blog.ReadBlogRequest
  com.proto.blog.ReadBlogRequest$1
@@ -38,8 +40,8 @@ proto/main/java/com/proto/blog/DeleteBlogRequest.java
  com.proto.blog.DeleteBlogRequest$Builder
 proto/main/java/com/proto/blog/DeleteBlogResponseOrBuilder.java
  com.proto.blog.DeleteBlogResponseOrBuilder
-proto/main/java/com/proto/blog/ReadBlogResponseOrBuilder.java
- com.proto.blog.ReadBlogResponseOrBuilder
+proto/main/java/com/proto/blog/UpdateBlogResponseOrBuilder.java
+ com.proto.blog.UpdateBlogResponseOrBuilder
 proto/main/java/com/proto/blog/FindAllBlogResponseOrBuilder.java
  com.proto.blog.FindAllBlogResponseOrBuilder
 proto/main/java/com/proto/blog/UpdateBlogRequestOrBuilder.java
@@ -69,19 +71,17 @@ proto/main/java/com/proto/blog/DeleteBlogResponse.java
  com.proto.blog.DeleteBlogResponse
  com.proto.blog.DeleteBlogResponse$1
  com.proto.blog.DeleteBlogResponse$Builder
-proto/main/java/com/proto/blog/UpdateBlogResponseOrBuilder.java
- com.proto.blog.UpdateBlogResponseOrBuilder
+proto/main/java/com/proto/blog/ReadBlogResponseOrBuilder.java
+ com.proto.blog.ReadBlogResponseOrBuilder
 proto/main/java/com/proto/blog/CreateBlogResponseOrBuilder.java
  com.proto.blog.CreateBlogResponseOrBuilder
 proto/main/java/com/proto/blog/ReadBlogRequestOrBuilder.java
  com.proto.blog.ReadBlogRequestOrBuilder
 proto/main/java/com/proto/blog/BlogOrBuilder.java
  com.proto.blog.BlogOrBuilder
-proto/main/java/com/proto/blog/CreateBlogRequest.java
- com.proto.blog.CreateBlogRequest
- com.proto.blog.CreateBlogRequest$1
- com.proto.blog.CreateBlogRequest$Builder
 grpc/blog/service/BlogServiceImpl.java
  grpc.blog.service.BlogServiceImpl
 grpc/blog/server/BlogServer.java
  grpc.blog.server.BlogServer
+grpc/blog/client/BlogClient.java
+ grpc.blog.client.BlogClient

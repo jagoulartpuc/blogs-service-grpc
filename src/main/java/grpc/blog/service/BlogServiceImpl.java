@@ -25,13 +25,13 @@ public class BlogServiceImpl extends BlogServiceImplBase {
 
     private final MongoClient mongoClient = MongoClients.create("mongodb+srv://admin:admin@cluster0.mmz1f.mongodb.net/blog-db?retryWrites=true&w=majority");
     private final MongoCollection<Document> collection = mongoClient.getDatabase("blog-db").getCollection("blogs");
-    private static final Semaphore deletionSemaphore = new Semaphore(0);
+    private static final Semaphore deletionSemaphore = new Semaphore(1);
 
     @Override
-    public synchronized void createBlog(CreateBlogRequest request, StreamObserver<CreateBlogResponse> responseObserver) {
+    public void createBlog(CreateBlogRequest request, StreamObserver<CreateBlogResponse> responseObserver) {
         int permits = deletionSemaphore.availablePermits();
         System.out.println(permits);
-        if (permits == 1) {
+        if (permits == 0) {
             System.out.println("Waiting deletion to be done...");
         } else {
             System.out.println("Received Create Blog Request");
@@ -40,9 +40,21 @@ public class BlogServiceImpl extends BlogServiceImplBase {
             Document document = new Document().append("authorId", blog.getAuthorId())
                     .append("title", blog.getTitle())
                     .append("content", blog.getContent());
-
-            // Critical session
-            collection.insertOne(document);
+            try {
+                // Wait
+                deletionSemaphore.acquire();
+                // Critical session
+                collection.insertOne(document);
+                // Signal deletion
+                deletionSemaphore.release();
+            } catch (Exception ex) {
+                responseObserver.onError(
+                        Status.NOT_FOUND
+                                .withDescription("An error ocurred while the blog is inserted.")
+                                .augmentDescription(ex.getLocalizedMessage())
+                                .asRuntimeException()
+                );
+            }
 
             String id = document.get("_id").toString();
             System.out.println("Inserted Blog id: " + id);
@@ -64,13 +76,13 @@ public class BlogServiceImpl extends BlogServiceImplBase {
     public void deleteBlog(DeleteBlogRequest request, StreamObserver<DeleteBlogResponse> responseObserver) {
         System.out.println("Received Delete Blog Request");
         DeleteResult result = null;
-
-
-
         try {
+            // Wait
+            deletionSemaphore.acquire();
             //Critical Session
             result = collection.deleteOne(eq("_id", new ObjectId(request.getBlogId())));
-
+            // Signal deletion
+            deletionSemaphore.release();
         } catch (Exception ex) {
             System.out.println("Blog id: " + request.getBlogId() + " not found.");
 
@@ -80,13 +92,6 @@ public class BlogServiceImpl extends BlogServiceImplBase {
                             .augmentDescription(ex.getLocalizedMessage())
                             .asRuntimeException()
             );
-        }
-
-        // Wait
-        try {
-            deletionSemaphore.acquire();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
 
         assert result != null;
@@ -102,9 +107,8 @@ public class BlogServiceImpl extends BlogServiceImplBase {
         }
 
         System.out.println("Deleted! Sending as response");
-        // Signal deletion
-        deletionSemaphore.release();
-        responseObserver.onNext(DeleteBlogResponse.newBuilder().build());
+
+        responseObserver.onNext(DeleteBlogResponse.newBuilder().setBlogId(request.getBlogId()).build());
         responseObserver.onCompleted();
 
     }
@@ -113,7 +117,7 @@ public class BlogServiceImpl extends BlogServiceImplBase {
     public void findAllBlog(FindAllBlogRequest request, StreamObserver<FindAllBlogResponse> responseObserver) {
         int permits = deletionSemaphore.availablePermits();
         System.out.println(permits);
-        if (permits == 1) {
+        if (permits == 0) {
             System.out.println("Waiting deletion to be done...");
         } else {
             System.out.println("Received Find All Blog Request");

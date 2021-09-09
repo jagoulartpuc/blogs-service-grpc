@@ -18,12 +18,18 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../Gradle/gradle-6.9.1" />
+        <option name="gradleHome" value="$USER_HOME$/.gradle/wrapper/dists/gradle-6.5-all/2oz4ud9k3tuxjg84bbf55q0tn/gradle-6.5" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -46,21 +52,7 @@
     <version value="1.0" />
   </component>
   <component name="JavadocGenerationManager">
-    <option name="OUTPUT_DIRECTORY" />
-    <option name="OPTION_SCOPE" value="protected" />
-    <option name="OPTION_HIERARCHY" value="true" />
-    <option name="OPTION_NAVIGATOR" value="true" />
-    <option name="OPTION_INDEX" value="true" />
-    <option name="OPTION_SEPARATE_INDEX" value="true" />
-    <option name="OPTION_DOCUMENT_TAG_USE" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true" />
-    <option name="OPTION_DEPRECATED_LIST" value="true" />
     <option name="OTHER_OPTIONS" value="" />
-    <option name="HEAP_SIZE" />
-    <option name="LOCALE" />
-    <option name="OPEN_IN_BROWSER" value="true" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
@@ -90,18 +82,19 @@
       <option name="url" value="https://repo.maven.apache.org/maven2/" />
     </remote-repository>
   </component>
-  <component name="RunConfigurationProducerService">
-    <option name="ignoredProducers">
-      <set>
-        <option value="com.android.tools.idea.compose.preview.runconfiguration.ComposePreviewRunConfigurationProducer" />
-      </set>
-    </option>
-  </component>
   <component name="SvnBranchConfigurationManager">
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
+  <component name="accountSettings">
+    <option name="activeRegion" value="us-east-1" />
+    <option name="recentlyUsedRegions">
+      <list>
+        <option value="us-east-1" />
+      </list>
+    </option>
   </component>
   <component name="libraryTable">
     <library name="Gradle: com.google.android:annotations:4.1.1.4">
@@ -210,76 +203,76 @@
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.17.2/1783cbd6b2728d0b13a9ab702ff5a1d51e71ebb/protobuf-java-3.17.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Gradle: io.grpc:grpc-api:1.39.0">
+    <library name="Gradle: io.grpc:grpc-api:1.40.1">
       <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-api/1.39.0/706f68087b8fae59f8949b4302ac9807131c0112/grpc-api-1.39.0.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-api/1.40.1/2bff3c4914cbeecc6284da74edae6737a0a183cd/grpc-api-1.40.1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-api/1.39.0/ccd37abb351c510835252ea18ddc7737c6d0c4b0/grpc-api-1.39.0-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-api/1.40.1/4c0ff68693f8211ebe88c3dbe64e089be305ec7b/grpc-api-1.40.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Gradle: io.grpc:grpc-context:1.39.0">
+    <library name="Gradle: io.grpc:grpc-context:1.40.1">
       <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-context/1.39.0/637f453f3654aa29bf085ae7ddc86f9f80c937dd/grpc-context-1.39.0.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-context/1.40.1/115297cced45e41370f101dcc028a39fb5f65fcd/grpc-context-1.40.1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-context/1.39.0/2311a2a900690781d1351e8956664667f1cb0d4b/grpc-context-1.39.0-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-context/1.40.1/c40a99097757b03cfca43ff266ab608515a70c28/grpc-context-1.40.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Gradle: io.grpc:grpc-core:1.39.0">
+    <library name="Gradle: io.grpc:grpc-core:1.40.1">
       <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-core/1.39.0/df5bbb97602a059eee86e22e09f6524901a62cfa/grpc-core-1.39.0.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-core/1.40.1/1db817d971cdeba5017e1adf056ca0f8f8a2d748/grpc-core-1.40.1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-core/1.39.0/4db1a3a9f51179144507e166ce29a7d24ec60ad2/grpc-core-1.39.0-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-core/1.40.1/88804fc2c57d1ec1e260146bcfa6360b80593205/grpc-core-1.40.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Gradle: io.grpc:grpc-netty-shaded:1.39.0">
+    <library name="Gradle: io.grpc:grpc-netty-shaded:1.40.1">
       <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-netty-shaded/1.39.0/de29a0879a702fc527e3dd8c9af2f4f92b5a7738/grpc-netty-shaded-1.39.0.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-netty-shaded/1.40.1/bfbbd4f3ce33526c9599709d4b92546227bd0e9b/grpc-netty-shaded-1.40.1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-netty-shaded/1.39.0/3c710faaca85325b0241917f752f9f2e64b99697/grpc-netty-shaded-1.39.0-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-netty-shaded/1.40.1/32437152ac7c6ef3eb5d08b99b9a295e3359fb6d/grpc-netty-shaded-1.40.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Gradle: io.grpc:grpc-protobuf-lite:1.39.0">
+    <library name="Gradle: io.grpc:grpc-protobuf-lite:1.40.1">
       <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf-lite/1.39.0/64ccdfc8a5a7c545247381f0ac42a5b8fc936e56/grpc-protobuf-lite-1.39.0.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf-lite/1.40.1/6459fb050c82b8683906cff6809ca12268c43d32/grpc-protobuf-lite-1.40.1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf-lite/1.39.0/65e517373e1e14b476cce697b0f2a83a9abafd06/grpc-protobuf-lite-1.39.0-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf-lite/1.40.1/8329d026e5d4abbd5aca00fad7504e675f9a6797/grpc-protobuf-lite-1.40.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Gradle: io.grpc:grpc-protobuf:1.39.0">
+    <library name="Gradle: io.grpc:grpc-protobuf:1.40.1">
       <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf/1.39.0/b7789ed9dd819a4fb9f5e3cf44d02f16fa49031e/grpc-protobuf-1.39.0.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf/1.40.1/a8b5db3ba7a573104d851cf0cdf51b824514ac85/grpc-protobuf-1.40.1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf/1.39.0/3e09193e65cc0d5f8e17c40289a58c1701c3d81b/grpc-protobuf-1.39.0-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf/1.40.1/7d8b74d122115b4178e4642744d7acdaaa79ee42/grpc-protobuf-1.40.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Gradle: io.grpc:grpc-services:1.39.0">
+    <library name="Gradle: io.grpc:grpc-services:1.40.1">
       <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-services/1.39.0/f050ee273f99234fcd3694329e942e8f0a9af240/grpc-services-1.39.0.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-services/1.40.1/f6359db7262e5ed34688518d8c326d0662902059/grpc-services-1.40.1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-services/1.39.0/69af98aebc315fac320a83176ccf25b883fb9290/grpc-services-1.39.0-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-services/1.40.1/ec91267c47c9d51be42d524a2210cfab6ed72388/grpc-services-1.40.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Gradle: io.grpc:grpc-stub:1.39.0">
+    <library name="Gradle: io.grpc:grpc-stub:1.40.1">
       <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-stub/1.39.0/598232e1142fb0d09067e1fd1fc524580ee9425/grpc-stub-1.39.0.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-stub/1.40.1/d852f1d8ac800c9a2c047ae70370dd833c603c52/grpc-stub-1.40.1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-stub/1.39.0/104f576c4195035d262ad7bac4343d21f054d2cf/grpc-stub-1.39.0-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-stub/1.40.1/d4d3bec636dda813c566de721ef905ee24992141/grpc-stub-1.40.1-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Gradle: io.perfmark:perfmark-api:0.23.0">

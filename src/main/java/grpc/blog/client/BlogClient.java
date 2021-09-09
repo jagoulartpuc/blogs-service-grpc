@@ -13,15 +13,15 @@ import static com.proto.blog.BlogServiceGrpc.*;
 
 public class BlogClient {
 
-    private static int period = 5;
+    private static int period = 2;
 
     public static void main(String[] args) {
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(5);
-        executor.scheduleAtFixedRate(startClient(), 2, period - 1, TimeUnit.SECONDS);
-        executor.scheduleAtFixedRate(startClient(), 1, period - 3, TimeUnit.SECONDS);
-        executor.scheduleAtFixedRate(startClient(), 0, period, TimeUnit.SECONDS);
-        executor.scheduleAtFixedRate(startClient(), 4, period - 4, TimeUnit.SECONDS);
-        executor.scheduleAtFixedRate(startClient(), 3, period, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
     }
 
     public static Runnable startClient() {
@@ -32,7 +32,6 @@ public class BlogClient {
             int port = ports[random.nextInt(3)];
             ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", port).usePlaintext().build();
             BlogServiceBlockingStub blogClient = newBlockingStub(channel);
-            period = random.nextInt(5) + 1;
 
             String[] operations = {"INSERT", "READ", "DELETE"};
             String randomOperation = operations[random.nextInt(3)];
@@ -55,7 +54,7 @@ public class BlogClient {
     public static void insertBlogRequest(BlogServiceBlockingStub blogClient) {
         CreateBlogResponse response = blogClient.createBlog(CreateBlogRequest.newBuilder()
                 .setBlog(Blog.newBuilder()
-                        .setAuthorId("Jose e Andre")
+                        .setAuthorId("Jose, Andre e Gui")
                         .setTitle("Trabalho de programacao distribuida")
                         .setContent("Implementacao de grpc com banco de dados compartilhado")
                         .build())
@@ -70,7 +69,7 @@ public class BlogClient {
         DeleteBlogResponse deleteBlogResponse = blogClient.deleteBlog(DeleteBlogRequest.newBuilder()
                 .setBlogId(getNextBlogId(blogClient))
                 .build());
-        System.out.println(deleteBlogResponse.toString());
+        System.out.println(deleteBlogResponse.getBlogId());
     }
 
     private static String getNextBlogId(BlogServiceBlockingStub blogClient) {

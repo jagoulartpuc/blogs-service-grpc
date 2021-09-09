@@ -46,7 +46,9 @@ message FindAllBlogResponse{
   Blog blog = 1;
 }
 
-message DeleteBlogResponse{}
+message DeleteBlogResponse{
+  string blog_id = 1;
+}
 
 service BlogService {
   rpc CreateBlog(CreateBlogRequest) returns (CreateBlogResponse);

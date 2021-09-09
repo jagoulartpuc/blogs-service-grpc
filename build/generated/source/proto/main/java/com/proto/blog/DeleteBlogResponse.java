@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeleteBlogResponse() {
+    blogId_ = "";
   }
 
   @java.lang.Override
@@ -48,6 +49,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            blogId_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -80,6 +87,44 @@ private static final long serialVersionUID = 0L;
             com.proto.blog.DeleteBlogResponse.class, com.proto.blog.DeleteBlogResponse.Builder.class);
   }
 
+  public static final int BLOG_ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object blogId_;
+  /**
+   * <code>string blog_id = 1;</code>
+   * @return The blogId.
+   */
+  @java.lang.Override
+  public java.lang.String getBlogId() {
+    java.lang.Object ref = blogId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      blogId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string blog_id = 1;</code>
+   * @return The bytes for blogId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getBlogIdBytes() {
+    java.lang.Object ref = blogId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      blogId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -94,6 +139,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!getBlogIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, blogId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -103,6 +151,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!getBlogIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, blogId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -118,6 +169,8 @@ private static final long serialVersionUID = 0L;
     }
     com.proto.blog.DeleteBlogResponse other = (com.proto.blog.DeleteBlogResponse) obj;
 
+    if (!getBlogId()
+        .equals(other.getBlogId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -129,6 +182,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + BLOG_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getBlogId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -262,6 +317,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      blogId_ = "";
+
       return this;
     }
 
@@ -288,6 +345,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.proto.blog.DeleteBlogResponse buildPartial() {
       com.proto.blog.DeleteBlogResponse result = new com.proto.blog.DeleteBlogResponse(this);
+      result.blogId_ = blogId_;
       onBuilt();
       return result;
     }
@@ -336,6 +394,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.proto.blog.DeleteBlogResponse other) {
       if (other == com.proto.blog.DeleteBlogResponse.getDefaultInstance()) return this;
+      if (!other.getBlogId().isEmpty()) {
+        blogId_ = other.blogId_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -362,6 +424,82 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object blogId_ = "";
+    /**
+     * <code>string blog_id = 1;</code>
+     * @return The blogId.
+     */
+    public java.lang.String getBlogId() {
+      java.lang.Object ref = blogId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        blogId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string blog_id = 1;</code>
+     * @return The bytes for blogId.
+     */
+    public com.google.protobuf.ByteString
+        getBlogIdBytes() {
+      java.lang.Object ref = blogId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        blogId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string blog_id = 1;</code>
+     * @param value The blogId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBlogId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      blogId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string blog_id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBlogId() {
+      
+      blogId_ = getDefaultInstance().getBlogId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string blog_id = 1;</code>
+     * @param value The bytes for blogId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBlogIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      blogId_ = value;
+      onChanged();
       return this;
     }
     @java.lang.Override

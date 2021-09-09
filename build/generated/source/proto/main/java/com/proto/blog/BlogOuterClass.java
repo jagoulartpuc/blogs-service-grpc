@@ -89,17 +89,18 @@ public final class BlogOuterClass {
       "\n\022UpdateBlogResponse\022\030\n\004blog\030\001 \001(\0132\n.blo" +
       "g.Blog\"$\n\021DeleteBlogRequest\022\017\n\007blog_id\030\001" +
       " \001(\t\"\024\n\022FindAllBlogRequest\"/\n\023FindAllBlo" +
-      "gResponse\022\030\n\004blog\030\001 \001(\0132\n.blog.Blog\"\024\n\022D" +
-      "eleteBlogResponse2\321\002\n\013BlogService\022?\n\nCre" +
-      "ateBlog\022\027.blog.CreateBlogRequest\032\030.blog." +
-      "CreateBlogResponse\0229\n\010ReadBlog\022\025.blog.Re" +
-      "adBlogRequest\032\026.blog.ReadBlogResponse\022?\n" +
-      "\nUpdateBlog\022\027.blog.UpdateBlogRequest\032\030.b" +
-      "log.UpdateBlogResponse\022?\n\nDeleteBlog\022\027.b" +
-      "log.DeleteBlogRequest\032\030.blog.DeleteBlogR" +
-      "esponse\022D\n\013FindAllBlog\022\030.blog.FindAllBlo" +
-      "gRequest\032\031.blog.FindAllBlogResponse0\001B\022\n" +
-      "\016com.proto.blogP\001b\006proto3"
+      "gResponse\022\030\n\004blog\030\001 \001(\0132\n.blog.Blog\"%\n\022D" +
+      "eleteBlogResponse\022\017\n\007blog_id\030\001 \001(\t2\321\002\n\013B" +
+      "logService\022?\n\nCreateBlog\022\027.blog.CreateBl" +
+      "ogRequest\032\030.blog.CreateBlogResponse\0229\n\010R" +
+      "eadBlog\022\025.blog.ReadBlogRequest\032\026.blog.Re" +
+      "adBlogResponse\022?\n\nUpdateBlog\022\027.blog.Upda" +
+      "teBlogRequest\032\030.blog.UpdateBlogResponse\022" +
+      "?\n\nDeleteBlog\022\027.blog.DeleteBlogRequest\032\030" +
+      ".blog.DeleteBlogResponse\022D\n\013FindAllBlog\022" +
+      "\030.blog.FindAllBlogRequest\032\031.blog.FindAll" +
+      "BlogResponse0\001B\022\n\016com.proto.blogP\001b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -170,7 +171,7 @@ public final class BlogOuterClass {
     internal_static_blog_DeleteBlogResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blog_DeleteBlogResponse_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "BlogId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
