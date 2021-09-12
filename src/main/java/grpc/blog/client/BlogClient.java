@@ -17,27 +17,28 @@ public class BlogClient {
 
     public static void main(String[] args) {
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(5);
-        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
-        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
-        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
-        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
-        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
+        executor.execute(startClient("INSERT", 9090));
+//        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
+//        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
+//        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
+//        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
+//        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
     }
 
-    public static Runnable startClient() {
+    public static Runnable startClient(String operation, int customPort) {
         return () -> {
             System.out.println("Starting client at thread: " + Thread.currentThread().getId());
             Random random = new Random();
             int[] ports = {9090, 9091, 9092};
             int port = ports[random.nextInt(3)];
-            ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", port).usePlaintext().build();
+            ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", customPort).usePlaintext().build();
             BlogServiceBlockingStub blogClient = newBlockingStub(channel);
 
             String[] operations = {"INSERT", "READ", "DELETE"};
             String randomOperation = operations[random.nextInt(3)];
-            if (randomOperation.equals("INSERT")) {
+            if (operation.equals("INSERT")) {
                 insertBlogRequest(blogClient);
-            } else if (randomOperation.equals("READ")) {
+            } else if (operation.equals("READ")) {
                 readAllBlogsRequest(blogClient);
             } else {
                 deleteBlogRequest(blogClient);

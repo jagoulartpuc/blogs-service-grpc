@@ -57,3 +57,23 @@ service BlogService {
   rpc DeleteBlog(DeleteBlogRequest) returns (DeleteBlogResponse);
   rpc FindAllBlog(FindAllBlogRequest) returns (stream FindAllBlogResponse);
 }
+
+enum Type {
+  INSERT= 0;
+  DELETE = 1;
+  SEARCH = 2;
+}
+
+message SemaphoreRequest{
+  Type type = 1;
+}
+
+message SemaphoreResponse{
+  int32 permits = 1;
+}
+
+service SemaphoreService {
+  rpc Acquire(SemaphoreRequest) returns (SemaphoreResponse);
+  rpc Release(SemaphoreRequest) returns (SemaphoreResponse);
+  rpc Permits(SemaphoreRequest) returns (SemaphoreResponse);
+}

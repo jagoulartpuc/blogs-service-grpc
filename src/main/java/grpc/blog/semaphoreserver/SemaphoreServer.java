@@ -1,6 +1,6 @@
 package grpc.blog.semaphoreserver;
 
-import grpc.blog.service.BlogServiceImpl;
+import grpc.blog.service.SemaphoreServiceImpl;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.protobuf.services.ProtoReflectionService;
@@ -16,7 +16,7 @@ public class SemaphoreServer {
     public static Runnable startServerAtPort(int port) {
         return () -> {
             Server server = ServerBuilder.forPort(port)
-                    .addService(new BlogServiceImpl())
+                    .addService(new SemaphoreServiceImpl())
                     .addService(ProtoReflectionService.newInstance())
                     .build();
 
