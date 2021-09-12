@@ -17,7 +17,7 @@ public class BlogClient {
 
     public static void main(String[] args) {
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(5);
-        executor.execute(startClient("INSERT", 9090));
+        executor.execute(startClient("DELETE", 9091));
 //        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
 //        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
 //        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);

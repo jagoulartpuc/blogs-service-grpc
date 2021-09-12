@@ -5,61 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8087ba09-6378-4a3c-bcfa-92efbb7ab06a" name="Changes" comment="Semaphore Server implementation">
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest$Builder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequestOrBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreResponse$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreResponse$Builder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreResponseOrBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreServiceGrpc$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreServiceGrpc$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreServiceGrpc$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreServiceGrpc$MethodHandlers.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreServiceGrpc$SemaphoreServiceBaseDescriptorSupplier.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreServiceGrpc$SemaphoreServiceBlockingStub.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreServiceGrpc$SemaphoreServiceFileDescriptorSupplier.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreServiceGrpc$SemaphoreServiceFutureStub.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreServiceGrpc$SemaphoreServiceImplBase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreServiceGrpc$SemaphoreServiceMethodDescriptorSupplier.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreServiceGrpc$SemaphoreServiceStub.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreServiceGrpc.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/Type$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/Type.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/semaphoreserver/SemaphoreServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/service/SemaphoreServiceImpl$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/service/SemaphoreServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/generated/source/proto/main/grpc/com/proto/blog/SemaphoreServiceGrpc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreRequestOrBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreResponseOrBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/BlogOuterClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/BlogOuterClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/client/BlogClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/client/BlogClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/server/BlogServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/server/BlogServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequestOrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequestOrBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/Type$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/Type.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/service/BlogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/service/BlogServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/service/SemaphoreServiceImpl$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/service/SemaphoreServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/service/SemaphoreServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/extracted-include-protos/test/blog/blog.proto" beforeDir="false" afterPath="$PROJECT_DIR$/build/extracted-include-protos/test/blog/blog.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/BlogOuterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/BlogOuterClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreRequestOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreRequestOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/Type.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/grpc-java-mongodb-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/grpc-java-mongodb-1.0.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/blog/blog.proto" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/blog/blog.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc-java-mongodb.iws" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-java-mongodb.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/client/BlogClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/client/BlogClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/semaphoreserver/SemaphoreServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/semaphoreserver/SemaphoreServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/server/BlogServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/server/BlogServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/service/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/service/BlogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/proto/blog/blog.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/proto/blog/blog.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -267,15 +235,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -380,15 +346,15 @@
       <item itemvalue="Application.BlogClient" />
       <item itemvalue="Application.BlogServer" />
       <item itemvalue="Application.SemaphoreServer" />
+      <item itemvalue="Gradle.blogs-service-grpc [BlogServer.main()]" />
       <item itemvalue="Gradle.blogs-service-grpc [build]" />
       <item itemvalue="Gradle.blogs-service-grpc [clean]" />
-      <item itemvalue="Gradle.blogs-service-grpc [BlogServer.main()]" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.blogs-service-grpc [build]" />
-        <item itemvalue="Application.SemaphoreServer" />
         <item itemvalue="Gradle.blogs-service-grpc [clean]" />
+        <item itemvalue="Application.SemaphoreServer" />
         <item itemvalue="Application.BlogClient" />
         <item itemvalue="Application.BlogServer" />
       </list>
@@ -423,6 +389,7 @@
       <workItem from="1631428483107" duration="2627000" />
       <workItem from="1631473302930" duration="6522000" />
       <workItem from="1631484465547" duration="3115000" />
+      <workItem from="1631488050630" duration="2417000" />
     </task>
     <servers />
   </component>
@@ -451,24 +418,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/grpc/blog/service/BlogServiceImpl.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="27" />
+          <url>file://$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/grpc/blog/service/BlogServiceImpl.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="29" />
+          <url>file://$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/grpc/blog/service/BlogServiceImpl.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="35" />
+          <url>file://$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/grpc/blog/service/BlogServiceImpl.java</url>
-          <line>76</line>
-          <option name="timeStamp" value="38" />
+          <url>file://$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

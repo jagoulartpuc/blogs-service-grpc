@@ -96,9 +96,6 @@ proto/main/java/com/proto/blog/SemaphoreResponse.java
  com.proto.blog.SemaphoreResponse$Builder
 proto/main/java/com/proto/blog/CreateBlogResponseOrBuilder.java
  com.proto.blog.CreateBlogResponseOrBuilder
-proto/main/java/com/proto/blog/Type.java
- com.proto.blog.Type
- com.proto.blog.Type$1
 proto/main/java/com/proto/blog/UpdateBlogResponseOrBuilder.java
  com.proto.blog.UpdateBlogResponseOrBuilder
 proto/main/java/com/proto/blog/SemaphoreRequest.java
@@ -115,6 +112,5 @@ grpc/blog/service/BlogServiceImpl.java
  grpc.blog.service.BlogServiceImpl
 grpc/blog/service/SemaphoreServiceImpl.java
  grpc.blog.service.SemaphoreServiceImpl
- grpc.blog.service.SemaphoreServiceImpl$1
 grpc/blog/client/BlogClient.java
  grpc.blog.client.BlogClient

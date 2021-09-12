@@ -13,7 +13,6 @@ import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import org.bson.Document;
 import org.bson.types.ObjectId;
-import com.proto.blog.Type;
 
 import static com.mongodb.client.model.Filters.eq;
 import static com.proto.blog.SemaphoreServiceGrpc.newBlockingStub;
@@ -42,9 +41,9 @@ public class BlogServiceImpl extends BlogServiceImplBase {
                 .append("content", blog.getContent());
         try {
             // Critical session
-            semaphoreClient.acquire(SemaphoreRequest.newBuilder().setType(Type.INSERT).build());
+            semaphoreClient.acquire(SemaphoreRequest.newBuilder().setType(0).build());
             collection.insertOne(document);
-            semaphoreClient.release(SemaphoreRequest.newBuilder().setType(Type.INSERT).build());
+            semaphoreClient.release(SemaphoreRequest.newBuilder().setType(0).build());
         } catch (Exception ex) {
             responseObserver.onError(
                     Status.NOT_FOUND
@@ -77,13 +76,13 @@ public class BlogServiceImpl extends BlogServiceImplBase {
         DeleteResult result = null;
         try {
             //Critical Session
-            semaphoreClient.acquire(SemaphoreRequest.newBuilder().setType(Type.INSERT).build());
-            semaphoreClient.acquire(SemaphoreRequest.newBuilder().setType(Type.DELETE).build());
-            semaphoreClient.acquire(SemaphoreRequest.newBuilder().setType(Type.SEARCH).build());
+            semaphoreClient.acquire(SemaphoreRequest.newBuilder().setType(0).build());
+            semaphoreClient.acquire(SemaphoreRequest.newBuilder().setType(1).build());
+            semaphoreClient.acquire(SemaphoreRequest.newBuilder().setType(2).build());
             result = collection.deleteOne(eq("_id", new ObjectId(request.getBlogId())));
-            semaphoreClient.release(SemaphoreRequest.newBuilder().setType(Type.INSERT).build());
-            semaphoreClient.release(SemaphoreRequest.newBuilder().setType(Type.DELETE).build());
-            semaphoreClient.release(SemaphoreRequest.newBuilder().setType(Type.SEARCH).build());
+            semaphoreClient.release(SemaphoreRequest.newBuilder().setType(0).build());
+            semaphoreClient.release(SemaphoreRequest.newBuilder().setType(1).build());
+            semaphoreClient.release(SemaphoreRequest.newBuilder().setType(2).build());
         } catch (Exception ex) {
             System.out.println("Blog id: " + request.getBlogId() + " not found.");
 
@@ -122,9 +121,9 @@ public class BlogServiceImpl extends BlogServiceImplBase {
         // TODO Se busca ocorrendo    = deixa buscar
 
         System.out.println("Received Find All Blog Request");
-        semaphoreClient.acquire(SemaphoreRequest.newBuilder().setType(Type.DELETE).build());
+        semaphoreClient.acquire(SemaphoreRequest.newBuilder().setType(1).build());
         collection.find().forEach(document -> responseObserver.onNext(FindAllBlogResponse.newBuilder().setBlog(documentToBlog(document)).build()));
-        semaphoreClient.release(SemaphoreRequest.newBuilder().setType(Type.DELETE).build());
+        semaphoreClient.release(SemaphoreRequest.newBuilder().setType(1).build());
         responseObserver.onCompleted();
     }
 
