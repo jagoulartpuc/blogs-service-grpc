@@ -16,7 +16,6 @@ public class BlogClient {
     private static int period = 2;
 
     public static void main(String[] args) {
-        System.out.println("Selecione o IP:");
         String host = args[0];
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(5);
         executor.scheduleAtFixedRate(startClient(host), 1, period, TimeUnit.SECONDS);

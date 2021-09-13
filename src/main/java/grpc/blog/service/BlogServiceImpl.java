@@ -17,14 +17,12 @@ import org.bson.types.ObjectId;
 import static com.mongodb.client.model.Filters.eq;
 import static com.proto.blog.SemaphoreServiceGrpc.newBlockingStub;
 
-;
-
 public class BlogServiceImpl extends BlogServiceImplBase {
 
     private final MongoClient mongoClient = MongoClients.create("mongodb+srv://admin:admin@cluster0.mmz1f.mongodb.net/blog-db?retryWrites=true&w=majority");
     private final MongoCollection<Document> collection = mongoClient.getDatabase("blog-db").getCollection("blogs");
 
-    ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9007).usePlaintext().build();
+    ManagedChannel channel = ManagedChannelBuilder.forAddress("192.168.1.103", 9007).usePlaintext().build();
     SemaphoreServiceBlockingStub semaphoreClient = newBlockingStub(channel);
 
     @Override
@@ -36,8 +34,8 @@ public class BlogServiceImpl extends BlogServiceImplBase {
                 .append("title", blog.getTitle())
                 .append("content", blog.getContent());
         try {
-            // Critical session
             semaphoreClient.acquire(SemaphoreRequest.newBuilder().setType(0).build());
+            // Critical session
             collection.insertOne(document);
             semaphoreClient.release(SemaphoreRequest.newBuilder().setType(0).build());
         } catch (Exception ex) {

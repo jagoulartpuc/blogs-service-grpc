@@ -110,7 +110,7 @@ proto/main/java/com/proto/blog/CreateBlogRequest.java
  com.proto.blog.CreateBlogRequest
  com.proto.blog.CreateBlogRequest$1
  com.proto.blog.CreateBlogRequest$Builder
-grpc/blog/client/BlogClient.java
- grpc.blog.client.BlogClient
 grpc/blog/server/BlogServer.java
  grpc.blog.server.BlogServer
+grpc/blog/client/BlogClient.java
+ grpc.blog.client.BlogClient

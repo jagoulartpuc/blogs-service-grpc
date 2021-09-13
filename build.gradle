@@ -59,25 +59,25 @@ idea {
     }
 }
 
-task runClient(type: JavaExec) {
+task runClient1(type: JavaExec) {
     group = 'Run' // <-- change the name as per your need
     classpath sourceSets.main.runtimeClasspath // <-- Don't change this
     main = "grpc.blog.client.BlogClient"
     args "192.168.1.103"
 }
 
-task runServer1(type: JavaExec) {
+task runClient2(type: JavaExec) {
+    group = 'Run' // <-- change the name as per your need
+    classpath sourceSets.main.runtimeClasspath // <-- Don't change this
+    main = "grpc.blog.client.BlogClient"
+    args "172.28.155.115"
+}
+
+task runServer(type: JavaExec) {
     group = 'Run' // <-- change the name as per your need
     classpath sourceSets.main.runtimeClasspath // <-- Don't change this
     main = "grpc.blog.server.BlogServer"
     args "8000,8001,8002"
-}
-
-task runServer2(type: JavaExec) {
-    group = 'Run' // <-- change the name as per your need
-    classpath sourceSets.main.runtimeClasspath // <-- Don't change this
-    main = "grpc.blog.server.BlogServer"
-    args "8003,8004,8005"
 }
 
 task runSemaphore(type: JavaExec) {
