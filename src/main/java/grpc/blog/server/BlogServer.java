@@ -7,6 +7,7 @@ import io.grpc.protobuf.services.ProtoReflectionService;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Stream;
 
 import static java.util.Arrays.asList;
@@ -14,15 +15,21 @@ import static java.util.Arrays.asList;
 public class BlogServer {
 
     public static void main(String[] args) {
-        if (args.length != 1) {
-            System.out.println("Port is required!");
-            return;
-        }
-        startServerAtPort(Integer.parseInt(args[0])).run();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Selecione as portas: (Ex: 9000,9001,9002)");
+        String[] ports = in.next().split(",");
+        List<Runnable> servers = asList(
+                startServerAtPort(Integer.parseInt(ports[0])),
+                startServerAtPort(Integer.parseInt(ports[1])),
+                startServerAtPort(Integer.parseInt(ports[2]))
+        );
+
+        servers.parallelStream().forEach(Runnable::run);
     }
 
     public static Runnable startServerAtPort(int port) {
         return () -> {
+
             Server server = ServerBuilder.forPort(port)
                     .addService(new BlogServiceImpl())
                     .addService(ProtoReflectionService.newInstance())
@@ -37,11 +44,11 @@ public class BlogServer {
             }
 
             Runtime.getRuntime().addShutdownHook(new Thread(
-                () -> {
-                    System.out.println("Received Shutdown Request");
-                    server.shutdown();
-                    System.out.println("Successfully stopped the Greeting Server");
-                }
+                    () -> {
+                        System.out.println("Received Shutdown Request");
+                        server.shutdown();
+                        System.out.println("Successfully stopped the Greeting Server");
+                    }
             ));
 
             try {
