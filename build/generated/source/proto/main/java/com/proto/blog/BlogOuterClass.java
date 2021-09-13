@@ -100,23 +100,25 @@ public final class BlogOuterClass {
       "g.Blog\"$\n\021DeleteBlogRequest\022\017\n\007blog_id\030\001" +
       " \001(\t\"\024\n\022FindAllBlogRequest\"/\n\023FindAllBlo" +
       "gResponse\022\030\n\004blog\030\001 \001(\0132\n.blog.Blog\"%\n\022D" +
-      "eleteBlogResponse\022\017\n\007blog_id\030\001 \001(\t\" \n\020Se" +
-      "maphoreRequest\022\014\n\004type\030\001 \001(\005\"$\n\021Semaphor" +
-      "eResponse\022\017\n\007permits\030\001 \001(\0052\321\002\n\013BlogServi" +
-      "ce\022?\n\nCreateBlog\022\027.blog.CreateBlogReques" +
-      "t\032\030.blog.CreateBlogResponse\0229\n\010ReadBlog\022" +
-      "\025.blog.ReadBlogRequest\032\026.blog.ReadBlogRe" +
-      "sponse\022?\n\nUpdateBlog\022\027.blog.UpdateBlogRe" +
-      "quest\032\030.blog.UpdateBlogResponse\022?\n\nDelet" +
-      "eBlog\022\027.blog.DeleteBlogRequest\032\030.blog.De" +
-      "leteBlogResponse\022D\n\013FindAllBlog\022\030.blog.F" +
-      "indAllBlogRequest\032\031.blog.FindAllBlogResp" +
-      "onse0\0012\306\001\n\020SemaphoreService\022:\n\007Acquire\022\026" +
-      ".blog.SemaphoreRequest\032\027.blog.SemaphoreR" +
-      "esponse\022:\n\007Release\022\026.blog.SemaphoreReque" +
-      "st\032\027.blog.SemaphoreResponse\022:\n\007Permits\022\026" +
-      ".blog.SemaphoreRequest\032\027.blog.SemaphoreR" +
-      "esponseB\022\n\016com.proto.blogP\001b\006proto3"
+      "eleteBlogResponse\022\017\n\007blog_id\030\001 \001(\t\",\n\020Se" +
+      "maphoreRequest\022\030\n\004type\030\001 \001(\0162\n.blog.Type" +
+      "\"$\n\021SemaphoreResponse\022\017\n\007permits\030\001 \001(\005**" +
+      "\n\004Type\022\n\n\006INSERT\020\000\022\n\n\006DELETE\020\001\022\n\n\006SEARCH" +
+      "\020\0022\321\002\n\013BlogService\022?\n\nCreateBlog\022\027.blog." +
+      "CreateBlogRequest\032\030.blog.CreateBlogRespo" +
+      "nse\0229\n\010ReadBlog\022\025.blog.ReadBlogRequest\032\026" +
+      ".blog.ReadBlogResponse\022?\n\nUpdateBlog\022\027.b" +
+      "log.UpdateBlogRequest\032\030.blog.UpdateBlogR" +
+      "esponse\022?\n\nDeleteBlog\022\027.blog.DeleteBlogR" +
+      "equest\032\030.blog.DeleteBlogResponse\022D\n\013Find" +
+      "AllBlog\022\030.blog.FindAllBlogRequest\032\031.blog" +
+      ".FindAllBlogResponse0\0012\306\001\n\020SemaphoreServ" +
+      "ice\022:\n\007Acquire\022\026.blog.SemaphoreRequest\032\027" +
+      ".blog.SemaphoreResponse\022:\n\007Release\022\026.blo" +
+      "g.SemaphoreRequest\032\027.blog.SemaphoreRespo" +
+      "nse\022:\n\007Permits\022\026.blog.SemaphoreRequest\032\027" +
+      ".blog.SemaphoreResponseB\022\n\016com.proto.blo" +
+      "gP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

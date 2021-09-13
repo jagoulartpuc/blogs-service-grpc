@@ -16,15 +16,15 @@ public class SemaphoreServiceImpl extends SemaphoreServiceGrpc.SemaphoreServiceI
     public void acquire(SemaphoreRequest request, StreamObserver<SemaphoreResponse> responseObserver) {
         try {
             switch (request.getType()) {
-                case 0:
+                case INSERT:
                     System.out.println("Semaphore insert acquire(). Permits: " + insertionSemaphore.availablePermits());
                     insertionSemaphore.acquire();
                     break;
-                case 1:
+                case DELETE:
                     System.out.println("Semaphore delete acquire(). Permits: " + deletionSemaphore.availablePermits());
                     deletionSemaphore.acquire();
                     break;
-                case 2:
+                case SEARCH:
                     System.out.println("Semaphore delete acquire(). Permits: " + searchSemaphore.availablePermits());
                     searchSemaphore.acquire();
                     break;
@@ -39,15 +39,15 @@ public class SemaphoreServiceImpl extends SemaphoreServiceGrpc.SemaphoreServiceI
     @Override
     public void release(SemaphoreRequest request, StreamObserver<SemaphoreResponse> responseObserver) {
         switch (request.getType()) {
-            case 0:
+            case INSERT:
                 System.out.println("Semaphore insert release(). Permits: " + insertionSemaphore.availablePermits());
                 insertionSemaphore.release();
                 break;
-            case 1:
+            case DELETE:
                 System.out.println("Semaphore delete release(). Permits: " + deletionSemaphore.availablePermits());
                 deletionSemaphore.release();
                 break;
-            case 2:
+            case SEARCH:
                 System.out.println("Semaphore search release(). Permits: " + searchSemaphore.availablePermits());
                 searchSemaphore.release();
                 break;
@@ -60,15 +60,15 @@ public class SemaphoreServiceImpl extends SemaphoreServiceGrpc.SemaphoreServiceI
     public void permits(SemaphoreRequest request, StreamObserver<SemaphoreResponse> responseObserver) {
         SemaphoreResponse permits = null;
         switch (request.getType()) {
-            case 0:
+            case INSERT:
                 System.out.println("Semaphore insert availablePermits(). Permits: " + insertionSemaphore.availablePermits());
                 permits = SemaphoreResponse.newBuilder().setPermits(insertionSemaphore.availablePermits()).build();
                 break;
-            case 1:
+            case DELETE:
                 System.out.println("Semaphore delete availablePermits(). Permits: " + deletionSemaphore.availablePermits());
                 permits = SemaphoreResponse.newBuilder().setPermits(deletionSemaphore.availablePermits()).build();
                 break;
-            case 2:
+            case SEARCH:
                 System.out.println("Semaphore search availablePermits(). Permits: " + searchSemaphore.availablePermits());
                 permits = SemaphoreResponse.newBuilder().setPermits(searchSemaphore.availablePermits()).build();
                 break;

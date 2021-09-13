@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SemaphoreRequest() {
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -49,8 +50,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 8: {
+            int rawValue = input.readEnum();
 
-            type_ = input.readInt32();
+            type_ = rawValue;
             break;
           }
           default: {
@@ -88,12 +90,20 @@ private static final long serialVersionUID = 0L;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_;
   /**
-   * <code>int32 type = 1;</code>
+   * <code>.blog.Type type = 1;</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override public int getTypeValue() {
+    return type_;
+  }
+  /**
+   * <code>.blog.Type type = 1;</code>
    * @return The type.
    */
-  @java.lang.Override
-  public int getType() {
-    return type_;
+  @java.lang.Override public com.proto.blog.Type getType() {
+    @SuppressWarnings("deprecation")
+    com.proto.blog.Type result = com.proto.blog.Type.valueOf(type_);
+    return result == null ? com.proto.blog.Type.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +120,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (type_ != 0) {
-      output.writeInt32(1, type_);
+    if (type_ != com.proto.blog.Type.INSERT.getNumber()) {
+      output.writeEnum(1, type_);
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +132,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (type_ != 0) {
+    if (type_ != com.proto.blog.Type.INSERT.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, type_);
+        .computeEnumSize(1, type_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,8 +151,7 @@ private static final long serialVersionUID = 0L;
     }
     com.proto.blog.SemaphoreRequest other = (com.proto.blog.SemaphoreRequest) obj;
 
-    if (getType()
-        != other.getType()) return false;
+    if (type_ != other.type_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -155,7 +164,7 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getType();
+    hash = (53 * hash) + type_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -366,8 +375,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.proto.blog.SemaphoreRequest other) {
       if (other == com.proto.blog.SemaphoreRequest.getDefaultInstance()) return this;
-      if (other.getType() != 0) {
-        setType(other.getType());
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -398,28 +407,51 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int type_ ;
+    private int type_ = 0;
     /**
-     * <code>int32 type = 1;</code>
-     * @return The type.
+     * <code>.blog.Type type = 1;</code>
+     * @return The enum numeric value on the wire for type.
      */
-    @java.lang.Override
-    public int getType() {
+    @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>int32 type = 1;</code>
-     * @param value The type to set.
+     * <code>.blog.Type type = 1;</code>
+     * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
-    public Builder setType(int value) {
+    public Builder setTypeValue(int value) {
       
       type_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 type = 1;</code>
+     * <code>.blog.Type type = 1;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.proto.blog.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.proto.blog.Type result = com.proto.blog.Type.valueOf(type_);
+      return result == null ? com.proto.blog.Type.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.blog.Type type = 1;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(com.proto.blog.Type value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.blog.Type type = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {

@@ -58,8 +58,14 @@ service BlogService {
   rpc FindAllBlog(FindAllBlogRequest) returns (stream FindAllBlogResponse);
 }
 
+enum Type {
+  INSERT = 0;
+  DELETE = 1;
+  SEARCH = 2;
+}
+
 message SemaphoreRequest{
-  int32 type = 1;
+  Type type = 1;
 }
 
 message SemaphoreResponse{
