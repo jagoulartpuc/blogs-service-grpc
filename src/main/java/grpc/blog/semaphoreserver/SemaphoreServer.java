@@ -10,7 +10,7 @@ import java.io.IOException;
 public class SemaphoreServer {
 
     public static void main(String[] args) {
-        startServerAtPort(9000).run();
+        startServerAtPort(9001).run();
     }
 
     public static Runnable startServerAtPort(int port) {

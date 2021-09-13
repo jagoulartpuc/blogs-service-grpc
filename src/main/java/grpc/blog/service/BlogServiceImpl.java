@@ -24,15 +24,11 @@ public class BlogServiceImpl extends BlogServiceImplBase {
     private final MongoClient mongoClient = MongoClients.create("mongodb+srv://admin:admin@cluster0.mmz1f.mongodb.net/blog-db?retryWrites=true&w=majority");
     private final MongoCollection<Document> collection = mongoClient.getDatabase("blog-db").getCollection("blogs");
 
-    ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9000).usePlaintext().build();
+    ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9001).usePlaintext().build();
     SemaphoreServiceBlockingStub semaphoreClient = newBlockingStub(channel);
 
     @Override
     public void createBlog(CreateBlogRequest request, StreamObserver<CreateBlogResponse> responseObserver) {
-        // TODO somente uma inserção por vez, podendo ter várias buscas em paralelo
-        // TODO Se inserção ocorrendo = não deixa inserir
-        // TODO Se deleção ocorrendo  = deixa inserir
-        // TODO Se busca ocorrendo    = deixa inserir
         System.out.println("Received Create Blog Request");
         Blog blog = request.getBlog();
 
@@ -68,10 +64,6 @@ public class BlogServiceImpl extends BlogServiceImplBase {
 
     @Override
     public void deleteBlog(DeleteBlogRequest request, StreamObserver<DeleteBlogResponse> responseObserver) {
-        // TODO Somente uma deleção por vez
-        // TODO Se inserção ocorrendo = não deixa deletar
-        // TODO Se deleção ocorrendo  = não deixa deletar
-        // TODO Se busca ocorrendo    = não deixa deletar
         System.out.println("Received Delete Blog Request");
         DeleteResult result = null;
         try {
@@ -108,17 +100,13 @@ public class BlogServiceImpl extends BlogServiceImplBase {
 
         System.out.println("Deleted! Sending as response");
 
-        responseObserver.onNext(DeleteBlogResponse.newBuilder().setBlogId(request.getBlogId()).build());
+        responseObserver.onNext(DeleteBlogResponse.newBuilder().build());
         responseObserver.onCompleted();
 
     }
 
     @Override
     public void findAllBlog(FindAllBlogRequest request, StreamObserver<FindAllBlogResponse> responseObserver) {
-        // TODO pode ocorrer concorrentemente com inserção. ação bloqueada quando tiver ocorrendo uma exclusão
-        // TODO Se inserção ocorrendo = deixa buscar
-        // TODO Se deleção ocorrendo  = não deixa buscar
-        // TODO Se busca ocorrendo    = deixa buscar
 
         System.out.println("Received Find All Blog Request");
         semaphoreClient.acquire(SemaphoreRequest.newBuilder().setType(1).build());

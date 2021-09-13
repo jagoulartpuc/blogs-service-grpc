@@ -5,30 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8087ba09-6378-4a3c-bcfa-92efbb7ab06a" name="Changes" comment="Semaphore Server implementation">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/BlogOuterClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/BlogOuterClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequestOrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/SemaphoreRequestOrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/Type$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/proto/blog/Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/client/BlogClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/client/BlogClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/semaphoreserver/SemaphoreServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/semaphoreserver/SemaphoreServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/server/BlogServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/server/BlogServer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/service/BlogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/service/BlogServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/service/SemaphoreServiceImpl$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/service/SemaphoreServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/service/SemaphoreServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/extracted-include-protos/test/blog/blog.proto" beforeDir="false" afterPath="$PROJECT_DIR$/build/extracted-include-protos/test/blog/blog.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/grpc/com/proto/blog/SemaphoreServiceGrpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/grpc/com/proto/blog/SemaphoreServiceGrpc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/BlogOuterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/BlogOuterClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/DeleteBlogResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/DeleteBlogResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/DeleteBlogResponseOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/DeleteBlogResponseOrBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreRequestOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreRequestOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/Type.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/grpc-java-mongodb-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/grpc-java-mongodb-1.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/blog/blog.proto" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/blog/blog.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreResponseOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreResponseOrBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc-java-mongodb.iws" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-java-mongodb.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/client/BlogClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/client/BlogClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/semaphoreserver/SemaphoreServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/semaphoreserver/SemaphoreServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/server/BlogServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/server/BlogServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/service/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/service/BlogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/proto/blog/blog.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/proto/blog/blog.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +158,7 @@
       <recent name="grpc.blog.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BlogClient">
+  <component name="RunManager" selected="Application.SemaphoreServer">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -181,9 +175,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
+    </configuration>
+    <configuration default="true" type="aws.lambda" factoryName="Remote">
+      <option name="credentialProviderId" />
+      <option name="regionId" />
+      <option name="functionName" />
+      <option name="input" />
+      <option name="inputIsFile" value="false" />
+      <method v="2" />
     </configuration>
     <configuration name="BlogClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="grpc.blog.client.BlogClient" />
@@ -232,17 +245,6 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
@@ -334,14 +336,6 @@
         <option name="BuildArtifacts" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="aws.lambda" factoryName="Remote">
-      <option name="credentialProviderId" />
-      <option name="regionId" />
-      <option name="functionName" />
-      <option name="input" />
-      <option name="inputIsFile" value="false" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Application.BlogClient" />
       <item itemvalue="Application.BlogServer" />
@@ -415,30 +409,6 @@
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="com.mongodb.client.result.DeleteResult$AcknowledgedDeleteResult" memberName="deletedCount" />
