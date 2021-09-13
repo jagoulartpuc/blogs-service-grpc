@@ -32,6 +32,7 @@ public class SemaphoreServiceImpl extends SemaphoreServiceGrpc.SemaphoreServiceI
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         responseObserver.onNext(SemaphoreResponse.newBuilder().build());
         responseObserver.onCompleted();
     }

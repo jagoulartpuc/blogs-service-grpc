@@ -5,6 +5,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
 import java.util.Random;
+import java.util.Scanner;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -16,21 +17,24 @@ public class BlogClient {
     private static int period = 2;
 
     public static void main(String[] args) {
+        System.out.println("Selecione o IP:");
+        Scanner in = new Scanner(System.in);
+        String host = in.next();
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(5);
-        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
-        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
-        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
-        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
-        executor.scheduleAtFixedRate(startClient(), 1, period, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(startClient(host), 1, period, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(startClient(host), 1, period, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(startClient(host), 1, period, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(startClient(host), 1, period, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(startClient(host), 1, period, TimeUnit.SECONDS);
     }
 
-    public static Runnable startClient() {
+    public static Runnable startClient(String host) {
         return () -> {
             System.out.println("Starting client at thread: " + Thread.currentThread().getId());
             Random random = new Random();
-            int[] ports = {8000, 8001, 8002, 8003, 8004, 8005};
-            int port = ports[random.nextInt(6)];
-            ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", port).usePlaintext().build();
+            int[] ports = {8000, 8001, 8002};
+            int port = ports[random.nextInt(3)];
+            ManagedChannel channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
             BlogServiceBlockingStub blogClient = newBlockingStub(channel);
 
             String[] operations = {"INSERT", "READ", "DELETE"};

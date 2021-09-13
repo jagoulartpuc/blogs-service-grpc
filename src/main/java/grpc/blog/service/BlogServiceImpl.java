@@ -24,7 +24,7 @@ public class BlogServiceImpl extends BlogServiceImplBase {
     private final MongoClient mongoClient = MongoClients.create("mongodb+srv://admin:admin@cluster0.mmz1f.mongodb.net/blog-db?retryWrites=true&w=majority");
     private final MongoCollection<Document> collection = mongoClient.getDatabase("blog-db").getCollection("blogs");
 
-    ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9001).usePlaintext().build();
+    ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9007).usePlaintext().build();
     SemaphoreServiceBlockingStub semaphoreClient = newBlockingStub(channel);
 
     @Override
@@ -109,9 +109,7 @@ public class BlogServiceImpl extends BlogServiceImplBase {
     public void findAllBlog(FindAllBlogRequest request, StreamObserver<FindAllBlogResponse> responseObserver) {
 
         System.out.println("Received Find All Blog Request");
-        semaphoreClient.acquire(SemaphoreRequest.newBuilder().setType(1).build());
         collection.find().forEach(document -> responseObserver.onNext(FindAllBlogResponse.newBuilder().setBlog(documentToBlog(document)).build()));
-        semaphoreClient.release(SemaphoreRequest.newBuilder().setType(1).build());
         responseObserver.onCompleted();
     }
 

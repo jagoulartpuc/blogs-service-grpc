@@ -33,6 +33,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/client" />
+            <option value="$PROJECT_DIR$/semaphoreserver" />
+            <option value="$PROJECT_DIR$/server" />
           </set>
         </option>
       </GradleProjectSettings>
@@ -60,6 +63,9 @@
       <module fileurl="file://$PROJECT_DIR$/com.charlesluxinger.grpc.java.mongodb.grpc-java-mongodb.main.iml" filepath="$PROJECT_DIR$/com.charlesluxinger.grpc.java.mongodb.grpc-java-mongodb.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.charlesluxinger.grpc.java.mongodb.grpc-java-mongodb.test.iml" filepath="$PROJECT_DIR$/com.charlesluxinger.grpc.java.mongodb.grpc-java-mongodb.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/grpc-java-mongodb.iml" filepath="$PROJECT_DIR$/grpc-java-mongodb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client/grpc-java-mongodb.client.iml" filepath="$PROJECT_DIR$/client/grpc-java-mongodb.client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/semaphoreserver/grpc-java-mongodb.semaphoreserver.iml" filepath="$PROJECT_DIR$/semaphoreserver/grpc-java-mongodb.semaphoreserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server/grpc-java-mongodb.server.iml" filepath="$PROJECT_DIR$/server/grpc-java-mongodb.server.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
@@ -81,6 +87,32 @@
       <option name="name" value="MavenRepo" />
       <option name="url" value="https://repo.maven.apache.org/maven2/" />
     </remote-repository>
+  </component>
+  <component name="RemoteTargetsManager">
+    <targets>
+      <target name="WSL - Ubuntu" type="wsl">
+        <config>
+          <option name="distributionMsId" value="Ubuntu" />
+          <option name="projectRootOnTarget" value="/mnt/c/Program Files/JetBrains/IntelliJ IDEA 2021.2.1/jbr/bin&#10;/grpc-java-mongodb" />
+        </config>
+        <ContributedStateBase type="JavaLanguageRuntime">
+          <config>
+            <option name="homePath" value="/usr/lib/jvm/java-11-openjdk-amd64" />
+            <option name="javaVersionString" value="11.0.11" />
+          </config>
+        </ContributedStateBase>
+        <ContributedStateBase type="JavaLanguageRuntime">
+          <config />
+        </ContributedStateBase>
+      </target>
+    </targets>
+  </component>
+  <component name="RunConfigurationProducerService">
+    <option name="ignoredProducers">
+      <set>
+        <option value="com.android.tools.idea.compose.preview.runconfiguration.ComposePreviewRunConfigurationProducer" />
+      </set>
+    </option>
   </component>
   <component name="SvnBranchConfigurationManager">
     <option name="mySupportsUserInfoFilter" value="true" />

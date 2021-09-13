@@ -5,24 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8087ba09-6378-4a3c-bcfa-92efbb7ab06a" name="Changes" comment="Semaphore Server implementation">
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/client/BlogClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/client/BlogClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/semaphoreserver/SemaphoreServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/semaphoreserver/SemaphoreServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/server/BlogServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/server/BlogServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/service/BlogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/service/BlogServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/grpc/com/proto/blog/SemaphoreServiceGrpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/grpc/com/proto/blog/SemaphoreServiceGrpc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/BlogOuterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/BlogOuterClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/DeleteBlogResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/DeleteBlogResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/DeleteBlogResponseOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/DeleteBlogResponseOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreRequestOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreRequestOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreResponseOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/blog/SemaphoreResponseOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/grpc-java-mongodb-1.0.0.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-java-mongodb.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-java-mongodb.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc-java-mongodb.iws" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-java-mongodb.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/client/BlogClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/client/BlogClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/semaphoreserver/SemaphoreServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/semaphoreserver/SemaphoreServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/server/BlogServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/server/BlogServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/service/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/service/BlogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/service/SemaphoreServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +136,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/.gradle/wrapper/dists/gradle-6.5-all/2oz4ud9k3tuxjg84bbf55q0tn/gradle-6.5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -158,7 +149,7 @@
       <recent name="grpc.blog.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SemaphoreServer">
+  <component name="RunManager" selected="Application.BlogClient">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -198,9 +189,10 @@
       <option name="inputIsFile" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="BlogClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+    <configuration name="BlogClient (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="grpc.blog.client.BlogClient" />
-      <module name="com.charlesluxinger.grpc.java.mongodb.grpc-java-mongodb.main" />
+      <module name="grpc-java-mongodb.client" />
+      <target name="WSL - Ubuntu" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="grpc.blog.client.*" />
@@ -212,10 +204,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BlogServer" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+    <configuration name="BlogClient (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="grpc.blog.client.BlogClient" />
+      <module name="com.charlesluxinger.grpc.java.mongodb.grpc-java-mongodb.main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="grpc.blog.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogClient" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="grpc.blog.client.BlogClient" />
+      <module name="com.charlesluxinger.grpc.java.mongodb.grpc-java-mongodb.main" />
+      <projectPathOnTarget name="projectPathOnTarget" value="/mnt/c/Program Files/JetBrains/IntelliJ IDEA 2021.2.1/jbr/bin /grpc-java-mongodb" />
+      <target name="WSL - Ubuntu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="grpc.blog.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="grpc.blog.server.BlogServer" />
       <module name="com.charlesluxinger.grpc.java.mongodb.grpc-java-mongodb.main" />
-      <option name="PROGRAM_PARAMETERS" value="9091" />
+      <projectPathOnTarget name="projectPathOnTarget" value="/mnt/c/Program Files/JetBrains/IntelliJ IDEA 2021.2.1/jbr/bin /grpc-java-mongodb" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="grpc.blog.server.*" />
@@ -230,6 +253,7 @@
     <configuration name="SemaphoreServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="grpc.blog.semaphoreserver.SemaphoreServer" />
       <module name="com.charlesluxinger.grpc.java.mongodb.grpc-java-mongodb.main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="grpc.blog.semaphoreserver.*" />
@@ -271,7 +295,7 @@
         <option name="BuildArtifacts" enabled="false" />
       </method>
     </configuration>
-    <configuration name="blogs-service-grpc [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="blogs-service-grpc [jar1]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -282,28 +306,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="blogs-service-grpc [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
+            <option value="jar1" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -340,17 +343,18 @@
       <item itemvalue="Application.BlogClient" />
       <item itemvalue="Application.BlogServer" />
       <item itemvalue="Application.SemaphoreServer" />
+      <item itemvalue="Application.BlogClient (1)" />
+      <item itemvalue="Application.BlogClient (2)" />
       <item itemvalue="Gradle.blogs-service-grpc [BlogServer.main()]" />
-      <item itemvalue="Gradle.blogs-service-grpc [build]" />
-      <item itemvalue="Gradle.blogs-service-grpc [clean]" />
+      <item itemvalue="Gradle.blogs-service-grpc [jar1]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.blogs-service-grpc [build]" />
-        <item itemvalue="Gradle.blogs-service-grpc [clean]" />
+        <item itemvalue="Application.BlogClient (2)" />
+        <item itemvalue="Application.BlogClient (1)" />
         <item itemvalue="Application.SemaphoreServer" />
-        <item itemvalue="Application.BlogClient" />
         <item itemvalue="Application.BlogServer" />
+        <item itemvalue="Gradle.blogs-service-grpc [jar1]" />
       </list>
     </recent_temporary>
   </component>
@@ -384,6 +388,8 @@
       <workItem from="1631473302930" duration="6522000" />
       <workItem from="1631484465547" duration="3115000" />
       <workItem from="1631488050630" duration="2417000" />
+      <workItem from="1631499201960" duration="68000" />
+      <workItem from="1631531700222" duration="8298000" />
     </task>
     <servers />
   </component>
