@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8087ba09-6378-4a3c-bcfa-92efbb7ab06a" name="Changes" comment="Semaphore Server implementation">
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/client/BlogClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/client/BlogClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc-java-mongodb.iws" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-java-mongodb.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/client/BlogClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/client/BlogClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/grpc/blog/service/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grpc/blog/service/BlogServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -410,7 +406,7 @@
       <workItem from="1631484465547" duration="3115000" />
       <workItem from="1631488050630" duration="2417000" />
       <workItem from="1631499201960" duration="68000" />
-      <workItem from="1631531700222" duration="20574000" />
+      <workItem from="1631531700222" duration="23925000" />
     </task>
     <servers />
   </component>
