@@ -63,9 +63,6 @@
       <module fileurl="file://$PROJECT_DIR$/com.charlesluxinger.grpc.java.mongodb.grpc-java-mongodb.main.iml" filepath="$PROJECT_DIR$/com.charlesluxinger.grpc.java.mongodb.grpc-java-mongodb.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.charlesluxinger.grpc.java.mongodb.grpc-java-mongodb.test.iml" filepath="$PROJECT_DIR$/com.charlesluxinger.grpc.java.mongodb.grpc-java-mongodb.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/grpc-java-mongodb.iml" filepath="$PROJECT_DIR$/grpc-java-mongodb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/client/grpc-java-mongodb.client.iml" filepath="$PROJECT_DIR$/client/grpc-java-mongodb.client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/semaphoreserver/grpc-java-mongodb.semaphoreserver.iml" filepath="$PROJECT_DIR$/semaphoreserver/grpc-java-mongodb.semaphoreserver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/server/grpc-java-mongodb.server.iml" filepath="$PROJECT_DIR$/server/grpc-java-mongodb.server.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">

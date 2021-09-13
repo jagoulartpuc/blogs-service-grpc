@@ -15,9 +15,7 @@ import static java.util.Arrays.asList;
 public class BlogServer {
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Selecione as portas: (Ex: 9000,9001,9002)");
-        String[] ports = in.next().split(",");
+        String[] ports = args[0].split(",");
         List<Runnable> servers = asList(
                 startServerAtPort(Integer.parseInt(ports[0])),
                 startServerAtPort(Integer.parseInt(ports[1])),

@@ -5,7 +5,6 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
 import java.util.Random;
-import java.util.Scanner;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -18,8 +17,7 @@ public class BlogClient {
 
     public static void main(String[] args) {
         System.out.println("Selecione o IP:");
-        Scanner in = new Scanner(System.in);
-        String host = in.next();
+        String host = args[0];
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(5);
         executor.scheduleAtFixedRate(startClient(host), 1, period, TimeUnit.SECONDS);
         executor.scheduleAtFixedRate(startClient(host), 1, period, TimeUnit.SECONDS);
@@ -32,8 +30,8 @@ public class BlogClient {
         return () -> {
             System.out.println("Starting client at thread: " + Thread.currentThread().getId());
             Random random = new Random();
-            int[] ports = {8000, 8001, 8002};
-            int port = ports[random.nextInt(3)];
+            int[] ports = {8000, 8001, 8002, 8003, 8004, 8005};
+            int port = ports[random.nextInt(6)];
             ManagedChannel channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
             BlogServiceBlockingStub blogClient = newBlockingStub(channel);
 

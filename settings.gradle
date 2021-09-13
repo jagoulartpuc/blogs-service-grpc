@@ -1,2 +1,1 @@
-include 'semaphoreserver', 'client', 'server'
 rootProject.name = 'grpc-java-mongodb'
