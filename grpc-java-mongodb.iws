@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8087ba09-6378-4a3c-bcfa-92efbb7ab06a" name="Changes" comment="Semaphore Server implementation">
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/client/BlogClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/grpc/blog/client/BlogClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc-java-mongodb.iws" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-java-mongodb.iws" afterDir="false" />
     </list>
@@ -406,7 +407,7 @@
       <workItem from="1631484465547" duration="3115000" />
       <workItem from="1631488050630" duration="2417000" />
       <workItem from="1631499201960" duration="68000" />
-      <workItem from="1631531700222" duration="23925000" />
+      <workItem from="1631531700222" duration="30368000" />
     </task>
     <servers />
   </component>

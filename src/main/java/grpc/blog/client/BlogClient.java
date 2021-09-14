@@ -29,7 +29,7 @@ public class BlogClient {
         return () -> {
             System.out.println("Starting client at thread: " + Thread.currentThread().getId());
             Random random = new Random();
-            int[] ports = {8000, 8001, 8002};
+            int[] ports = {6000,6001,6002};
             int port = ports[random.nextInt(3)];
             ManagedChannel channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
             BlogServiceBlockingStub blogClient = newBlockingStub(channel);

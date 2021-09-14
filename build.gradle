@@ -77,7 +77,7 @@ task runServer(type: JavaExec) {
     group = 'Run' // <-- change the name as per your need
     classpath sourceSets.main.runtimeClasspath // <-- Don't change this
     main = "grpc.blog.server.BlogServer"
-    args "8000,8001,8002"
+    args "6000,6001,6002"
 }
 
 task runSemaphore(type: JavaExec) {
